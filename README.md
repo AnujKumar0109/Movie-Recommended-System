@@ -1,47 +1,49 @@
-# 🎬 Movie Recommender System
+# 🎬 Movie Recommendation System
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas)
-![NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?logo=numpy)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-F7931E?logo=scikitlearn)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A **Movie Recommender System** built using **Python** and **Streamlit** that recommends similar movies based on content similarity. The application provides personalized movie recommendations through an interactive web interface.
+A **content-based Movie Recommendation System** built using **Python**, **Streamlit**, and **Machine Learning**. The application recommends movies similar to a user's selected movie by analyzing movie metadata such as genres, cast, crew, keywords, and overview.
 
 ---
 
-## 📖 Project Overview
+# 📖 Project Overview
 
-Finding the right movie can be difficult with thousands of available options. This project helps users discover movies similar to their favorites by using a **content-based recommendation algorithm**.
+Finding the perfect movie among thousands of options can be challenging. This project simplifies that process by using a **content-based recommendation algorithm** to suggest similar movies based on their features.
 
-Users simply select a movie from the dropdown menu, and the system instantly recommends similar movies.
+Users simply choose a movie from the dropdown menu and receive personalized recommendations instantly through an interactive web interface.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-- 🎥 Search and select any movie
-- 🤖 Content-based recommendation system
+- 🎥 Recommend similar movies instantly
+- 🤖 Content-based recommendation algorithm
 - ⚡ Fast recommendation generation
-- 🎨 Interactive Streamlit interface
+- 🎨 Interactive Streamlit user interface
 - 📚 Preprocessed movie dataset
 - 💻 Easy to run locally
+- 📱 Simple and user-friendly design
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
 | Python | Programming Language |
 | Streamlit | Web Application |
 | Pandas | Data Processing |
-| NumPy | Numerical Computation |
+| NumPy | Numerical Computing |
+| Scikit-learn | Machine Learning |
 | Pickle | Model Storage |
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 Movie-Recommended-System/
@@ -49,90 +51,80 @@ Movie-Recommended-System/
 │── requirements.txt
 │── movies.pkl
 │── movies_dict.pkl
-│── .gitignore
+│── similarity.pkl (Not Included)
 │── README.md
+│── .gitignore
+│── images/
+│   ├── home.png
+│   └── recommendation.png
 ```
 
-> **Note:** The `similarity.pkl` file is not included in this repository because it exceeds GitHub's file size limit (100 MB).
+> **Note:** `similarity.pkl` is not included because it exceeds GitHub's 100 MB file size limit. Generate it locally before running the application.
 
 ---
 
-## ⚙️ Installation
+# 🚀 Live Demo
 
-### 1️⃣ Clone the repository
+Coming Soon...
+
+*(Update this section after deploying on Streamlit Community Cloud.)*
+
+---
+
+# ⚙️ Installation
+
+### Clone the repository
 
 ```bash
 git clone https://github.com/AnujKumar0109/Movie-Recommended-System.git
 ```
 
-### 2️⃣ Navigate to the project folder
+### Navigate to the project directory
 
 ```bash
 cd Movie-Recommended-System
 ```
 
-### 3️⃣ Install dependencies
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Run the application
+### Run the application
 
 ```bash
 streamlit run app.py
 ```
 
-The application will open in your browser.
+The application will open automatically in your default browser.
 
 ---
 
-## ▶️ Usage
+# ▶️ Usage
 
 1. Launch the application.
-2. Select a movie from the dropdown.
+2. Select a movie from the dropdown list.
 3. Click the **Recommend** button.
 4. View the recommended movies.
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshots
 
-### Home Page
+## Home Page
 
-> Add a screenshot here.
+![Home Page](images/home.png)
 
-```
-images/home.png
-```
+## Recommendation Results
 
-### Recommendation Results
-
-> Add another screenshot here.
-
-```
-images/recommendation.png
-```
+![Recommendation Results](images/recommendation.png)
 
 ---
 
-## 🚀 Future Improvements
+# 📊 Dataset
 
-- 🔍 Search bar with autocomplete
-- ❤️ Favorite movies list
-- 🌐 Deploy on Streamlit Community Cloud
-- 🎭 Filter by genre
-- ⭐ Movie ratings
-- 👤 User authentication
-- 🤝 Hybrid recommendation system
-
----
-
-## 📊 Dataset
-
-This project uses a preprocessed movie dataset for generating recommendations.
-
-Dataset includes:
+This project uses a preprocessed movie dataset containing:
 
 - Movie Titles
 - Genres
@@ -141,36 +133,50 @@ Dataset includes:
 - Crew
 - Overview
 
+The recommendation engine computes similarity between movies using feature vectors generated from the dataset.
+
 ---
 
-## 🤝 Contributing
+# 🚀 Future Improvements
+
+- 🔍 Search bar with autocomplete
+- ⭐ Movie ratings integration
+- 🎭 Genre-based filtering
+- ❤️ Favorite movies list
+- 👤 User authentication
+- 🌐 Deploy on Streamlit Community Cloud
+- 🤝 Hybrid recommendation system
+
+---
+
+# 🤝 Contributing
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a new branch
+1. Fork the repository.
+2. Create a new branch.
 
 ```bash
 git checkout -b feature-name
 ```
 
-3. Commit your changes
+3. Commit your changes.
 
 ```bash
 git commit -m "Add new feature"
 ```
 
-4. Push the branch
+4. Push the branch.
 
 ```bash
 git push origin feature-name
 ```
 
-5. Create a Pull Request
+5. Open a Pull Request.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Anuj Kumar**
 
@@ -179,12 +185,12 @@ git push origin feature-name
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+If you found this project helpful, consider giving it a ⭐ on GitHub.
 
 ---
 
-## 📜 License
+# 📜 License
 
 This project is licensed under the MIT License.
