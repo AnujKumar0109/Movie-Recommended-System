@@ -1,6 +1,11 @@
+
+import pandas as pd
 import streamlit as st
 import pickle
-import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from nltk.stem.porter import PorterStemmer
+
 
 # ==========================================
 # Page Configuration
@@ -14,10 +19,38 @@ st.set_page_config(
 # ==========================================
 # Load Data
 # ==========================================
-movie_dict = pickle.load(open("movies_dict.pkl", "rb"))
+
 movies = pd.DataFrame(movie_dict)
 
-similarity = pickle.load(open("similarity.pkl", "rb"))
+import streamlit as st
+import pickle
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from nltk.stem.porter import PorterStemmer
+
+ps = PorterStemmer()
+
+def stem(text):
+    return " ".join(ps.stem(word) for word in text.split())
+
+@st.cache_resource
+def load_data():
+    # Load movies dataframe
+    movies = pickle.load(open("movies.pkl", "rb"))
+
+    # Apply stemming
+    movies["tags"] = movies["tags"].apply(stem)
+
+    # Create vectors
+    cv = CountVectorizer(max_features=5000, stop_words="english")
+    vectors = cv.fit_transform(movies["tags"]).toarray()
+
+    # Compute similarity matrix
+    similarity = cosine_similarity(vectors)
+
+    return movies, similarity
+
+movies, similarity = load_data()
 
 # ==========================================
 # Recommendation Function
