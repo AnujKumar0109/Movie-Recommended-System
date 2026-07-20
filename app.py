@@ -20,7 +20,7 @@ st.set_page_config(
 # Load Data
 # ==========================================
 
-movies = pd.DataFrame(movie_dict)
+
 
 import streamlit as st
 import pickle
